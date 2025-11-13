@@ -16,6 +16,8 @@ html, body {
   color: white;
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
+  background-blend-mode: overlay;
+  background-color: rgba(15, 10, 40, 0.6); /* filtro oscuro para mejor legibilidad */
 }
 
 /* NAVBAR */
