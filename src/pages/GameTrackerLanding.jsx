@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./GameTrackerLanding.css";
 
 export default function GameTrackerLanding() {
@@ -6,14 +7,28 @@ export default function GameTrackerLanding() {
     <div className="landing-container">
       <nav className="navbar">
         <h1 className="logo">GameTracker</h1>
+
         <ul className="nav-links">
-          <li>Inicio</li>
-          <li>Biblioteca</li>
-          <li>Reseñas</li>
-          <li>Estadísticas</li>
-          <li>Contacto</li>
+          <li>
+            <Link to="/">Inicio</Link>
+          </li>
+          <li>
+            <Link to="/biblioteca">Biblioteca</Link>
+          </li>
+          <li>
+            <Link to="/reseñas">Reseñas</Link>
+          </li>
+          <li>
+            <Link to="/estadisticas">Estadísticas</Link>
+          </li>
+          <li>
+            <Link to="/contacto">Contacto</Link>
+          </li>
         </ul>
-        <button className="login-btn">Iniciar sesión</button>
+
+        <Link to="/login">
+          <button className="login-btn">Iniciar sesión</button>
+        </Link>
       </nav>
 
       <main className="hero">
@@ -24,7 +39,10 @@ export default function GameTrackerLanding() {
             Controla tus videojuegos favoritos, registra tus horas jugadas,
             comparte reseñas y lleva tu progreso con estilo.
           </p>
-          <button className="explore-btn">Explorar biblioteca →</button>
+
+          <Link to="/biblioteca">
+            <button className="explore-btn">Explorar biblioteca →</button>
+          </Link>
         </div>
 
         <div className="hero-image">
@@ -32,7 +50,9 @@ export default function GameTrackerLanding() {
         </div>
       </main>
 
-      <footer className="footer">© 2025 GameTracker — Tu espacio gamer</footer>
+      <footer className="footer">
+        © 2025 GameTracker — Tu espacio gamer
+      </footer>
     </div>
   );
 }
