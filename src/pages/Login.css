@@ -1,9 +1,62 @@
+/* FONDO COMPLETO */
 .login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #12002f, #3a0ca3);
-  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://img.freepik.com/foto-gratis/paisaje-fantasia-cientifica_23-2151892577.jpg?semt=ais_hybrid&w=740&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
 }
+
+/* CAJA CUADRADA */
+.login-box {
+  width: 360px;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 25px;
+  border-radius: 14px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+}
+
+/* TÍTULO */
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #bb86fc;
+}
+
+/* INPUTS */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* BOTÓN */
+.login-box button {
+  width: 100%;
+  background: #bb86fc;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.login-box button:hover {
+  background: #9b63e8;
+}
+

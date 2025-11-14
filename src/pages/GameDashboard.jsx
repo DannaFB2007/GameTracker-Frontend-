@@ -8,83 +8,79 @@ export default function GameDashboard() {
     nombre: "",
     genero: "",
     plataforma: "",
-    calificacion: "",
+    calificacion: ""
   });
 
-  // Cargar los juegos al iniciar
+  // Cargar juegos desde el backend
+  const cargarJuegos = async () => {
+    const data = await getJuegos();
+    setJuegos(data);
+  };
+
   useEffect(() => {
     cargarJuegos();
   }, []);
 
-  async function cargarJuegos() {
-    try {
-      const data = await getJuegos();
-      setJuegos(data);
-    } catch (error) {
-      console.error("Error al cargar los juegos:", error);
-    }
-  }
+  // Manejar inputs del formulario
+  const manejarCambio = (e) => {
+    setNuevoJuego({ ...nuevoJuego, [e.target.name]: e.target.value });
+  };
 
-  // Agregar un nuevo juego
-  async function manejarSubmit(e) {
+  // Agregar juego
+  const manejarAgregar = async (e) => {
     e.preventDefault();
-    try {
-      await addJuego(nuevoJuego);
-      setNuevoJuego({ nombre: "", genero: "", plataforma: "", calificacion: "" });
-      cargarJuegos();
-    } catch (error) {
-      console.error("Error al agregar el juego:", error);
-    }
-  }
+    await addJuego(nuevoJuego);
+    cargarJuegos();
+    setNuevoJuego({ nombre: "", genero: "", plataforma: "", calificacion: "" });
+  };
 
-  // Eliminar un juego
-  async function manejarEliminar(id) {
-    if (confirm("¿Seguro que quieres eliminar este juego?")) {
-      try {
-        await deleteJuego(id);
-        cargarJuegos();
-      } catch (error) {
-        console.error("Error al eliminar el juego:", error);
-      }
-    }
-  }
+  // Eliminar juego
+  const manejarEliminar = async (id) => {
+    await deleteJuego(id);
+    cargarJuegos();
+  };
 
   return (
-    <div className="dashboard-container">
-      <header className="dashboard-header">
-        <h1>Biblioteca</h1>
-        <p>Explora y organiza todos tus videojuegos favoritos.</p>
-      </header>
+    <div className="biblioteca-container">
 
-      <form onSubmit={manejarSubmit} className="formulario-juego">
+      <h1 className="titulo">📚 Biblioteca de Juegos</h1>
+
+      {/* Formulario para agregar */}
+      <form className="formulario" onSubmit={manejarAgregar}>
         <input
           type="text"
+          name="nombre"
           placeholder="Nombre del juego"
           value={nuevoJuego.nombre}
-          onChange={(e) => setNuevoJuego({ ...nuevoJuego, nombre: e.target.value })}
+          onChange={manejarCambio}
           required
         />
         <input
           type="text"
+          name="genero"
           placeholder="Género"
           value={nuevoJuego.genero}
-          onChange={(e) => setNuevoJuego({ ...nuevoJuego, genero: e.target.value })}
+          onChange={manejarCambio}
         />
         <input
           type="text"
+          name="plataforma"
           placeholder="Plataforma"
           value={nuevoJuego.plataforma}
-          onChange={(e) => setNuevoJuego({ ...nuevoJuego, plataforma: e.target.value })}
+          onChange={manejarCambio}
         />
         <input
           type="number"
-          placeholder="Calificación (1-10)"
+          name="calificacion"
+          placeholder="Calificación"
           value={nuevoJuego.calificacion}
-          onChange={(e) => setNuevoJuego({ ...nuevoJuego, calificacion: e.target.value })}
+          onChange={manejarCambio}
         />
-        <button type="submit">Agregar juego</button>
+
+        <button type="submit" className="agregar-btn">Agregar</button>
       </form>
 
+      {/* Grid de juegos */}
       <section className="game-grid">
         {juegos.length > 0 ? (
           juegos.map((juego) => (
@@ -93,11 +89,13 @@ export default function GameDashboard() {
               <p>🎮 {juego.genero}</p>
               <p>🕹️ {juego.plataforma}</p>
               <p>⭐ {juego.calificacion}</p>
-              <button onClick={() => manejarEliminar(juego._id)}>Eliminar</button>
+              <button className="eliminar-btn" onClick={() => manejarEliminar(juego._id)}>
+                Eliminar
+              </button>
             </div>
           ))
         ) : (
-          <p>No hay juegos en tu biblioteca.</p>
+          <p className="no-juegos">No hay juegos en tu biblioteca.</p>
         )}
       </section>
     </div>

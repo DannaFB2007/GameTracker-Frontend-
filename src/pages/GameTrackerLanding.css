@@ -1,173 +1,191 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  background-color: #0b0b2e;
-}
-
+/* FONDO AJUSTABLE A CUALQUIER PANTALLA */
 .landing-container {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
-  padding: 0;
-  margin: 0;
-
   background-image: url("https://img.freepik.com/foto-gratis/paisaje-fantasia-cientifica_23-2151892577.jpg?semt=ais_hybrid&w=740&q=80");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
-/* NAVBAR */
+/* --- NAVBAR --- */
 .navbar {
-  width: 90%;
-  margin: 20px auto;
+  width: 100%;
+  padding: 15px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px 40px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  flex-wrap: wrap;
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #b89cff;
+  font-size: 26px;
+  font-weight: bold;
+  color: #bb86fc;
 }
 
+/* NAV LINKS */
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   list-style: none;
+  padding: 10px 0;
 }
 
 .nav-links a {
-  color: #fff;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+  color: white;
+  transition: 0.2s;
 }
 
 .nav-links a:hover {
-  color: #b89cff;
+  color: #bb86fc;
 }
 
+/* BOTÓN LOGIN */
 .login-btn {
-  background: #b89cff;
-  color: #0b0b2e;
+  background: #bb86fc;
+  padding: 10px 16px;
+  border-radius: 8px;
   border: none;
-  padding: 10px 25px;
-  border-radius: 12px;
-  font-weight: 600;
+  color: white;
   cursor: pointer;
-  transition: 0.3s;
+  font-size: 15px;
+  transition: 0.2s;
 }
 
 .login-btn:hover {
-  background: white;
+  background: #9b63e8;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 10%;
-  gap: 40px;
+  margin-top: 70px;
+  padding: 20px 25px;
+  max-width: 700px;
 }
 
-.hero-content {
-  flex: 1;
+.hero h2 {
+  letter-spacing: 1.5px;
+  font-size: 16px;
 }
 
-.hero-content h2 {
-  color: #b89cff;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.hero h1 {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 12px 0;
 }
 
-.hero-content h1 {
-  font-size: 3rem;
-  margin: 10px 0;
+.hero p {
+  font-size: 17px;
+  max-width: 550px;
+  line-height: 1.4;
+  margin: 15px 0;
 }
 
-.hero-content p {
-  color: #ccc;
-  line-height: 1.6;
-  margin-bottom: 25px;
-}
-
+/* BOTÓN PRINCIPAL */
 .explore-btn {
-  background: linear-gradient(90deg, #b89cff, #7b6cf7);
+  background: #bb86fc;
+  padding: 14px 22px;
+  border-radius: 8px;
+  color: white;
   border: none;
-  padding: 12px 30px;
-  border-radius: 12px;
-  color: #fff;
-  font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(150, 100, 255, 0.3);
-  transition: all 0.3s ease;
+  font-size: 17px;
+  margin-top: 10px;
 }
 
 .explore-btn:hover {
-  transform: translateY(-3px);
-}
-
-/* TARJETAS */
-.hero-card {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-}
-
-.hero-card h3 {
-  color: #b89cff;
-  margin-bottom: 20px;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.card {
-  background: #1e1445;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.card:hover {
-  background: linear-gradient(135deg, #7b6cf7, #b89cff);
+  background: #9b63e8;
 }
 
 /* FOOTER */
 .footer {
+  margin-top: auto;
+  padding: 20px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
   text-align: center;
-  color: #aaa;
-  padding: 15px;
-  font-size: 0.9rem;
+}
+
+/* --- MOBILE FIRST: Ajustes para pantallas pequeñas --- */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 10px 15px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-links {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .explore-btn {
+    font-size: 16px;
+  }
+}
+
+/* --- SECCIÓN JUEGOS POPULARES --- */
+.popular-section {
+  width: 100%;
+  margin-top: 40px;
+  padding: 20px 25px;
+}
+
+.popular-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #bb86fc;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+.popular-card {
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.popular-card:hover {
+  transform: scale(1.05);
+}
+
+.popular-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
   margin-bottom: 10px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-card {
-    width: 100%;
-  }
+.popular-card h3 {
+  font-size: 16px;
+  margin: 0;
+  color: white;
 }

@@ -1,38 +1,30 @@
-import React, { useEffect, useState } from "react";
-import { getJuegos } from "../services/api";
+import React, { useState } from "react";
 import "./Reviews.css";
 
 export default function Reviews() {
-  const [juegos, setJuegos] = useState([]);
-
-  useEffect(() => {
-    getJuegos().then(setJuegos);
-  }, []);
+  const [juego, setJuego] = useState("");
+  const [review, setReview] = useState("");
 
   return (
     <div className="reviews-container">
-      <header>
-        <h1>Reseñas de Juegos</h1>
-        <p>Lee y comparte opiniones sobre tus videojuegos favoritos.</p>
-      </header>
+      <div className="reviews-box">
+        <h2>⭐ Reseñas</h2>
 
-      <section className="reviews-grid">
-        {juegos.length === 0 ? (
-          <p>No hay juegos aún.</p>
-        ) : (
-          juegos.map((juego, index) => (
-            <div key={index} className="review-card">
-              <h3>{juego.nombre}</h3>
-              <p><strong>Género:</strong> {juego.genero}</p>
-              <p><strong>Plataforma:</strong> {juego.plataforma}</p>
-              <p><strong>Calificación:</strong> ⭐ {juego.calificacion}/10</p>
-              <textarea placeholder="Escribe tu reseña..." />
-              <button>Enviar Reseña</button>
-            </div>
-          ))
-        )}
-      </section>
+        <input
+          type="text"
+          placeholder="Nombre del juego"
+          value={juego}
+          onChange={(e) => setJuego(e.target.value)}
+        />
+
+        <textarea
+          placeholder="Escribe tu reseña..."
+          value={review}
+          onChange={(e) => setReview(e.target.value)}
+        />
+
+        <button>Enviar Reseña</button>
+      </div>
     </div>
   );
 }
-
