@@ -3,9 +3,8 @@
   min-height: 100vh;
   width: 100%;
   padding: 20px;
-  color: white;
-
-  background-image: url("https://img.freepik.com/foto-gratis/paisaje-fantasia-cientifica_23-2151892577.jpg?semt=ais_hybrid&w=740&q=80");
+  color: rgb(255, 255, 255);
+  background-color: #3C096C;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -77,8 +76,8 @@
 /* --- TARJETAS --- */
 .game-card {
   background: rgba(0,0,0,0.5);
-  padding: 15px;
-  border-radius: 12px;
+  padding: 20px;
+  border-radius: 18px;
   text-align: center;
 
   backdrop-filter: blur(5px);
@@ -87,7 +86,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  height: 180px;        /* CUADRADA */
+  height: 210px;        /* CUADRADA */
   transition: transform 0.2s;
 }
 
@@ -105,7 +104,7 @@
 .eliminar-btn {
   margin-top: auto;
   background: #ff4d4d;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 8px 10px;
   border: none;
   border-radius: 8px;
