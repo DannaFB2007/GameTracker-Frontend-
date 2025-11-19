@@ -6,37 +6,45 @@ export default function GameTrackerLanding() {
   return (
     <div className="landing-container">
 
-      {/* NAVBAR */}
-      <nav className="navbar">
-        <h1 className="logo">GameTracker</h1>
-
-        <ul className="nav-links">
-          <li><Link to="/">Inicio</Link></li>
-          <li><Link to="/biblioteca">Biblioteca</Link></li>
-          <li><Link to="/reseñas">Reseñas</Link></li>
-          <li><Link to="/contacto">Contacto</Link></li>
-        </ul>
-
-        <Link to="/login">
-          <button className="login-btn">Iniciar sesión</button>
-        </Link>
-      </nav>
-
       {/* HERO */}
       <main className="hero">
-        <h2>TU ESPACIO GAMER</h2>
-        <h1>Organiza, juega y reseña</h1>
 
-        <p>
-          Controla tus videojuegos favoritos, registra tus horas jugadas, 
-          comparte reseñas y lleva tu progreso con estilo.
-        </p>
+        {/* IZQUIERDA: TEXTO */}
+        <div className="hero-container">
+          <div className="hero-text">
+            <h2>TU ESPACIO GAMER</h2>
+            <h1>Organiza, juega y reseña</h1>
+            <p>
+              Controla tus videojuegos favoritos, registra tus horas jugadas,
+              comparte reseñas y lleva tu progreso con estilo.
+            </p>
 
-        <Link to="/biblioteca">
-          <button className="explore-btn">Explorar biblioteca →</button>
-        </Link>
+            <Link to="/biblioteca">
+              <button className="explore-btn">Explorar biblioteca →</button>
+            </Link>
+          </div>
+
+          <div className="hero-images">
+            <div className="img-box">
+              <img src="/src/assets/Escorpion.jpg" />
+            </div>
+
+            <div className="img-box">
+              <img src="/src/assets/Kratos.jpg" />
+            </div>
+
+            <div className="img-box">
+              <img src="/src/assets/Sonic.jpg" />
+            </div>
+
+            <div className="img-box">
+              <img src="/src/assets/Sub zero.avif" />
+            </div>
+          </div>
+        </div>
+
       </main>
-
+      
       {/* SECCIÓN DE JUEGOS AL FINAL */}
       <section className="popular-section">
         <h2 className="popular-title">🎮 Juegos Populares</h2>
@@ -80,7 +88,19 @@ export default function GameTrackerLanding() {
       <footer className="footer">
         © 2025 GameTracker — Tu espacio gamer by Danna y Laura
       </footer>
-
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

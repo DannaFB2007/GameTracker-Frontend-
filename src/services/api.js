@@ -17,8 +17,7 @@ export async function addJuego(juego) {
   return res.json();
 }
 
-// Eliminar un juego
+// Eliminar un juego (SIN JSON)
 export async function deleteJuego(id) {
-  const res = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
-  return res.json();
+  await fetch(`${API_URL}/${id}`, { method: "DELETE" });
 }

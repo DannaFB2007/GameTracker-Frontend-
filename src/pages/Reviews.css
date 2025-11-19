@@ -16,8 +16,8 @@
 .reviews-box {
   width: 320px; /* MÁS PEQUEÑA */
   background: rgba(0, 0, 0, 0.55);
-  padding: 20px;
-  border-radius: 14px;
+  padding: 40px;
+  border-radius: 20px;
   text-align: center;
   color: white;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);

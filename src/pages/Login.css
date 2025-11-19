@@ -9,14 +9,14 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 20px;
+  padding: 30px;
 }
 
 /* CAJA CUADRADA */
 .login-box {
   width: 360px;
   background: rgba(0, 0, 0, 0.55);
-  padding: 25px;
+  padding: 40px;
   border-radius: 14px;
   text-align: center;
   color: white;
@@ -35,7 +35,7 @@
 .login-box input {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   border-radius: 10px;
   border: none;
   font-size: 15px;

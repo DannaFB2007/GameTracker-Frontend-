@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./GameDashboard.css";
-
 import { getJuegos, addJuego, deleteJuego } from "../services/api";
 
 export default function GameDashboard() {
